@@ -17,10 +17,9 @@ glFlush ();
  void myDisplaytrinocolor()
 {
 glClear (GL_COLOR_BUFFER_BIT);
-glColor3f (0.0, 0.0, 0.0);
+glColor3f (1.0, 1.0, 1.0);
 glPointSize(5.0);
-glBegin(GL_TRIANGLE_STRIP);
-
+glBegin(GL_TRIANGLES);
 glVertex2i(100, 50);
 glVertex2i(100, 130);
 glVertex2i(150, 130);
@@ -50,7 +49,6 @@ glutInitWindowPosition (200, 150);
 glutCreateWindow ("Hello World");
 glutDisplayFunc(myDisplaytricolor);
 myInit1 ();
-glutInit(&argc, argv);
 glutInitDisplayMode (GLUT_MULTISAMPLE | GLUT_RGB);
 glutInitWindowSize (120, 240);
 glutInitWindowPosition (400, 450);
