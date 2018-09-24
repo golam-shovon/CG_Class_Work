@@ -78,9 +78,9 @@ glVertex2i(150, 430);
 glEnd();
 
 glBegin(GL_LINE_LOOP);
-glVertex2i(100, 50);
-glVertex2i(190, 130);
-glVertex2i(190, 130);
+glVertex2i(100, 250);
+glVertex2i(100, 330);
+glVertex2i(150, 330);
 glEnd();
 glFlush ();
 }
@@ -120,8 +120,8 @@ glutCreateWindow ("Rectangle Filled");
 glutDisplayFunc(rectanglefilled);
 myInit ();
 
-glutInitWindowSize (640,480);
-glutInitWindowPosition (1600, 150);
+glutInitWindowSize (240,480);
+glutInitWindowPosition (1400, 150);
 glutCreateWindow ("All For One");
 glutDisplayFunc(allforone);
 myInit ();
