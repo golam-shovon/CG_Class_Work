@@ -89,7 +89,7 @@ void ship(void)
 {
 glClear (GL_COLOR_BUFFER_BIT);
 glColor3f (1.0, 0.0, 0.0);
-glPointSize(5.0);
+glPointSize(10.0);
 
 glBegin(GL_LINE_LOOP);
 glVertex2i(80, 150);
@@ -117,6 +117,20 @@ glVertex2i(180, 150);
 glVertex2i(140, 150);
 glVertex2i(140, 230);
 glVertex2i(180, 230);
+glEnd();
+
+
+
+glBegin(GL_POINTS);
+glVertex2i(150, 240);
+glVertex2i(160, 260);
+glVertex2i(170, 280);
+glEnd();
+
+glBegin(GL_POINTS);
+glVertex2i(150, 240);
+glVertex2i(160, 260);
+glVertex2i(170, 280);
 glEnd();
 
 glFlush ();
