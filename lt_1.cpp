@@ -82,6 +82,23 @@ glVertex2i(100, 250);
 glVertex2i(100, 330);
 glVertex2i(150, 330);
 glEnd();
+
+glFlush ();
+}
+void ship(void)
+{
+glClear (GL_COLOR_BUFFER_BIT);
+glColor3f (1.0, 0.0, 0.0);
+glPointSize(5.0);
+
+glBegin(GL_LINE_LOOP);
+glVertex2i(80, 150);
+glVertex2i(560, 150);
+glVertex2i(400, 120);
+glVertex2i(200, 120);
+
+glEnd();
+
 glFlush ();
 }
 void myInit (void)
@@ -124,6 +141,12 @@ glutInitWindowSize (240,480);
 glutInitWindowPosition (1400, 150);
 glutCreateWindow ("All For One");
 glutDisplayFunc(allforone);
+myInit ();
+
+glutInitWindowSize (240,480);
+glutInitWindowPosition (1600, 150);
+glutCreateWindow ("Ship");
+glutDisplayFunc(ship);
 myInit ();
 
 glutMainLoop();
