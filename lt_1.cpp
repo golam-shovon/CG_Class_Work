@@ -119,8 +119,6 @@ glVertex2i(140, 230);
 glVertex2i(180, 230);
 glEnd();
 
-
-
 glBegin(GL_POINTS);
 glVertex2i(150, 240);
 glVertex2i(160, 260);
@@ -128,9 +126,15 @@ glVertex2i(170, 280);
 glEnd();
 
 glBegin(GL_POINTS);
-glVertex2i(150, 240);
-glVertex2i(160, 260);
-glVertex2i(170, 280);
+glVertex2i(230, 290);
+glVertex2i(245, 320);
+glVertex2i(255, 340);
+glEnd();
+
+glBegin(GL_POINTS);
+glVertex2i(395, 290);
+glVertex2i(400, 330);
+glVertex2i(410, 360);
 glEnd();
 
 glFlush ();
@@ -179,6 +183,12 @@ myInit ();
 
 glutInitWindowSize (240,480);
 glutInitWindowPosition (1600, 150);
+glutCreateWindow ("Ship");
+glutDisplayFunc(ship);
+myInit ();
+
+glutInitWindowSize (1024,768);
+glutInitWindowPosition (0, 0);
 glutCreateWindow ("Ship");
 glutDisplayFunc(ship);
 myInit ();
