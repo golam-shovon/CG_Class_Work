@@ -96,7 +96,27 @@ glVertex2i(80, 150);
 glVertex2i(560, 150);
 glVertex2i(400, 120);
 glVertex2i(200, 120);
+glEnd();
 
+glBegin(GL_LINE_LOOP);
+glVertex2i(380, 150);
+glVertex2i(420, 150);
+glVertex2i(420, 250);
+glVertex2i(380, 250);
+glEnd();
+
+glBegin(GL_LINE_LOOP);
+glVertex2i(220, 150);
+glVertex2i(260, 150);
+glVertex2i(260, 280);
+glVertex2i(220, 280);
+glEnd();
+
+glBegin(GL_LINE_LOOP);
+glVertex2i(180, 150);
+glVertex2i(140, 150);
+glVertex2i(140, 230);
+glVertex2i(180, 230);
 glEnd();
 
 glFlush ();
