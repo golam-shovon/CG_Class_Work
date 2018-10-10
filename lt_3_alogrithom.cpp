@@ -3,16 +3,16 @@
 #include<cstdlib>
 #include<Gl/gl.h>
 #include <GL/glut.h>
-float xx1,xx2,yy1,yy2;
+double xx1,xx2,yy1,yy2;
 void dda()
 {
-float x1,x2,y1,y2,length,xincre,yincre,i,x,y;
+double x1,x2,y1,y2,length,xincre,yincre,i,x,y;
 x1=xx1;
 x2=xx2;
 y1=yy1;
 y2=yy2;
 glClear (GL_COLOR_BUFFER_BIT);
-glColor3f (1.0, 1.0, 0.0);
+glColor3f (1.0, 0.0, 0.0);
 length=abs(x2-x1);
 if(abs(y2-y1)>length)
 {
@@ -24,14 +24,14 @@ x=x+0.5;
 y=y+0.5;
 i=1;
 glPointSize(5.0);
-glBegin(GL_LINE_LOOP);
 while(i<=length)
 {
+   glBegin(GL_POINTS);
    glVertex2i(trunc(x),trunc(y));
    x=x+xincre;
    y=y+yincre;
+   glEnd();
 }
-glEnd();
 glFlush ();
 }
 void myInit (void)
