@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include<GL/gl.h>
 #include <GL/glut.h>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
+#include <glm/ext.hpp>
+#include<math.h>
 int number;
 int ed[100];
+float sx,sy;
 void polygon(void)
 {
     glClear (GL_COLOR_BUFFER_BIT);
@@ -27,7 +27,12 @@ void polygontranslated(void)
     glBegin(GL_POLYGON);
     for(int i=1;i<=number;i++)
     {
-
+        glm::mat3 m = glm::mat3(1.0f);
+        m[2].x=sx;
+        m[2].y=sy;
+        glm::vec3 v( ed[i-1],ed[i],1.0f);
+        glm::vec3 result=m*v;
+        glVertex2i(round(v.x),round(v.y) );
     }
     glEnd();
     glFlush ();
@@ -45,17 +50,19 @@ glutInit(&argc, argv);
 glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
 printf("1.Enter Edge of the POlygon:  ");
 scanf("%d",&number);
-int i=0;
-for(i=1;i<=number*2;i++)
+for(int i=1;i<=number*2;i++)
 {
     printf("Enter the Co-Ordinate of vertex %d:",&i);
     scanf("%d%d",&ed[i-1],&ed[i]);
-    i++;
 }
+printf("Enter the Translation factor for x and y:");
+scanf("%lf%lf",&sx,&sy);
 glutInitWindowSize (640,480);
 glutInitWindowPosition (0, 0);
-glutCreateWindow ("circle");
+glutCreateWindow ("polygon");
 glutDisplayFunc(polygon);
+glutDisplayFunc(polygontranslated);
 myInit ();
 glutMainLoop();
 }
+
